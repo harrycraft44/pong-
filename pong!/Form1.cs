@@ -208,7 +208,6 @@ namespace pong_
             var r = controls.ForeColor.R - 1;
             var g = controls.ForeColor.G - 1;
             var b = controls.ForeColor.B - 1;
-            Console.WriteLine( r+ " "+ g + " " +b );
             if (r != 0) {
                 controls.ForeColor = Color.FromArgb(controls.ForeColor.R - 1, controls.ForeColor.G - 1, controls.ForeColor.B - 1);
 
