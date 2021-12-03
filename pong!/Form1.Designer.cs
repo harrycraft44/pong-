@@ -102,7 +102,7 @@ namespace pong_
             // ball
             // 
             this.ball.BackColor = System.Drawing.SystemColors.Control;
-            this.ball.Location = new System.Drawing.Point(355, 203);
+            this.ball.Location = new System.Drawing.Point(474, 215);
             this.ball.Name = "ball";
             this.ball.Size = new System.Drawing.Size(30, 31);
             this.ball.TabIndex = 4;
@@ -138,11 +138,9 @@ namespace pong_
             // 
             // start
             // 
-            this.start.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.start.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.start.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.start.Location = new System.Drawing.Point(355, 203);
+            this.start.Location = new System.Drawing.Point(396, 284);
             this.start.Name = "start";
             this.start.Size = new System.Drawing.Size(37, 29);
             this.start.TabIndex = 9;
@@ -150,7 +148,7 @@ namespace pong_
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(-2, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(801, 450);
             this.pictureBox1.TabIndex = 10;
@@ -173,6 +171,7 @@ namespace pong_
             // controls
             // 
             this.controls.AutoSize = true;
+            this.controls.BackColor = System.Drawing.Color.Transparent;
             this.controls.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.controls.ForeColor = System.Drawing.SystemColors.Control;
             this.controls.Location = new System.Drawing.Point(10, 9);
@@ -193,11 +192,11 @@ namespace pong_
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ball);
+            this.Controls.Add(this.P1);
             this.Controls.Add(this.controls);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.ball);
             this.Controls.Add(this.ai);
-            this.Controls.Add(this.P1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.end1);
             this.Controls.Add(this.end2);

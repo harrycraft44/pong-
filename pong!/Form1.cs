@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+//wow there no simulation in this project
 namespace pong_
 {
     public partial class Form1 : Form
@@ -19,6 +19,7 @@ namespace pong_
         }
         public bool up = true;
         public bool left = false;
+        public bool aioo= false;
         public bool messagebox = false;
         public int[] scores = { 0, 0 };
         public int over = 0;
@@ -48,7 +49,9 @@ namespace pong_
         }
         private void aiupdate() {
             Random rnd = new Random();
-     
+            if (scores.Contains(10)) {
+                
+            }
             if (ball.Location.X > ai.Location.X + 20)
             {
                 scores[0] = scores[0] + 1;
@@ -98,6 +101,7 @@ namespace pong_
             }
             if (ball.Location.X == ai.Location.X || ball.Location.X - 5 == ai.Location.X || ball.Location.X + 5 == ai.Location.X) { }
             else{
+                if (aioo) { 
                 if (up)
                 {
 
@@ -124,38 +128,60 @@ namespace pong_
                         up = true;
                     }
 
-                } 
+                }
+                }
             }
 
         }
-        private void move(int add) {
+        private void move(int add,Control a) {
 
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 20; i++)
             {
-                P1.Location = new Point(P1.Location.X, P1.Location.Y + add);
+                a.Location = new Point(a.Location.X, a.Location.Y + add);
                 Task.Delay(1);
             }
         }
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Down || e.KeyCode == Keys.S)
+            if (e.KeyCode == Keys.Down )
             {
                 if (end2.Location.Y > P1.Location.Y)
                 {
-                    move(1);
+                    move(2,P1);
                 }
             }
-            else if (e.KeyCode == Keys.Up || e.KeyCode == Keys.W)
+            else if (e.KeyCode == Keys.Up )
             {
                 if (end1.Location.Y < P1.Location.Y)
                 {
-                    move(-1);
+                    move(-2, P1);
                 }
 
-            } else if (e.KeyCode == Keys.R) { restart();
+            }else if ( e.KeyCode == Keys.S)
+            {
+                if (end2.Location.Y > ai.Location.Y)
+                {
+                    move(2, ai);
+                }
+            }
+            else if (e.KeyCode == Keys.W)
+            {
+                if (end1.Location.Y < ai.Location.Y)
+                {
+                    move(-2, ai);
+                }
 
-            } else if (e.KeyCode == Keys.Escape) { close(); }
+            }
+            else if (e.KeyCode == Keys.R) { restart();
+                scores[1] = 0;
+                scores[0] = 0;
+
+            } else if (e.KeyCode == Keys.Escape) {
+                close(); 
+            } else if (e.KeyCode == Keys.A) {
+                aioo = !aioo;            
+            }
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -186,6 +212,8 @@ namespace pong_
 
         private void restart()
         {
+            scoresupdate();
+
             ball.Location = start.Location;
             left = false;
             over = 0;
@@ -208,9 +236,14 @@ namespace pong_
             var r = controls.ForeColor.R - 1;
             var g = controls.ForeColor.G - 1;
             var b = controls.ForeColor.B - 1;
-            if (r != 0) {
+            if (r != 0)
+            {
                 controls.ForeColor = Color.FromArgb(controls.ForeColor.R - 1, controls.ForeColor.G - 1, controls.ForeColor.B - 1);
-
+                controls.Show();
+            }
+            else {
+                controls.Hide();
+            
             }
         }
     }
