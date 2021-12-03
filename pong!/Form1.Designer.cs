@@ -39,9 +39,9 @@ namespace pong_
             this.ed2 = new System.Windows.Forms.PictureBox();
             this.ed = new System.Windows.Forms.PictureBox();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.start = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.P1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.end2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.end1)).BeginInit();
@@ -50,6 +50,7 @@ namespace pong_
             ((System.ComponentModel.ISupportInitialize)(this.ed2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.start)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // P1
@@ -99,18 +100,19 @@ namespace pong_
             // ball
             // 
             this.ball.BackColor = System.Drawing.SystemColors.Control;
-            this.ball.Location = new System.Drawing.Point(355, 201);
+            this.ball.Location = new System.Drawing.Point(355, 203);
             this.ball.Name = "ball";
             this.ball.Size = new System.Drawing.Size(30, 31);
             this.ball.TabIndex = 4;
             this.ball.TabStop = false;
+            this.ball.Click += new System.EventHandler(this.ball_Click);
             // 
             // ed2
             // 
             this.ed2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ed2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ed2.Location = new System.Drawing.Point(-67, 0);
+            this.ed2.Location = new System.Drawing.Point(-54, 0);
             this.ed2.Name = "ed2";
             this.ed2.Size = new System.Drawing.Size(940, 29);
             this.ed2.TabIndex = 5;
@@ -132,26 +134,6 @@ namespace pong_
             this.timer2.Enabled = true;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(-2, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(87, 29);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "escape";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(91, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 29);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "restart";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // start
             // 
             this.start.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -164,17 +146,39 @@ namespace pong_
             this.start.TabIndex = 9;
             this.start.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(801, 450);
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Noto Sans Arabic UI", 40F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(296, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(173, 61);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "label1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.ball);
             this.Controls.Add(this.ai);
             this.Controls.Add(this.P1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.end1);
             this.Controls.Add(this.end2);
             this.Controls.Add(this.start);
@@ -194,7 +198,9 @@ namespace pong_
             ((System.ComponentModel.ISupportInitialize)(this.ed2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.start)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -209,9 +215,9 @@ namespace pong_
         private System.Windows.Forms.PictureBox ed2;
         private System.Windows.Forms.PictureBox ed;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox start;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label1;
     }
 }
 
