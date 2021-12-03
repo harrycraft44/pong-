@@ -25,6 +25,8 @@ namespace pong_
         public int randi = 0;
         private void Form1_Load(object sender, EventArgs e)
         {
+            scores[0] = Properties.Settings.Default.player1;
+            scores[1] = Properties.Settings.Default.ai;
 
             FormBorderStyle = FormBorderStyle.None;
             WindowState = FormWindowState.Maximized;
@@ -151,7 +153,7 @@ namespace pong_
 
             } else if (e.KeyCode == Keys.R) { restart();
 
-            } else if (e.KeyCode == Keys.Escape) { this.Close(); }
+            } else if (e.KeyCode == Keys.Escape) { close(); }
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -171,8 +173,12 @@ namespace pong_
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void close()
         {
+            Properties.Settings.Default.player1 = scores[0];
+            Properties.Settings.Default.ai = scores[1];
+            Properties.Settings.Default.Save();
+
             this.Close();
         }
 
