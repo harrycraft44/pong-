@@ -41,20 +41,22 @@ namespace pong_
         }
         private void scoresupdate() {
             label1.Text = scores[0] + "|" + scores[1];
-
+            Properties.Settings.Default.player1 = scores[0];
+            Properties.Settings.Default.ai = scores[1];
+            Properties.Settings.Default.Save();
 
         }
         private void aiupdate() {
             Random rnd = new Random();
      
-            if (ball.Location.X > ai.Location.X)
+            if (ball.Location.X > ai.Location.X + 20)
             {
                 scores[0] = scores[0] + 1;
                     messagebox = true;
                     restart();
                 scoresupdate();
             }
-            else if(ball.Location.X < P1.Location.X)
+            else if(ball.Location.X < P1.Location.X- 20)
             {
 
                 scores[1] = scores[1] + 1;
@@ -199,6 +201,18 @@ namespace pong_
         private void ball_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void fade_Tick(object sender, EventArgs e)
+        {
+            var r = controls.ForeColor.R - 1;
+            var g = controls.ForeColor.G - 1;
+            var b = controls.ForeColor.B - 1;
+            Console.WriteLine( r+ " "+ g + " " +b );
+            if (r != 0) {
+                controls.ForeColor = Color.FromArgb(controls.ForeColor.R - 1, controls.ForeColor.G - 1, controls.ForeColor.B - 1);
+
+            }
         }
     }
 }

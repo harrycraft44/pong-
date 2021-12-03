@@ -42,6 +42,8 @@ namespace pong_
             this.start = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.controls = new System.Windows.Forms.Label();
+            this.fade = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.P1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.end2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.end1)).BeginInit();
@@ -168,12 +170,30 @@ namespace pong_
             this.label1.TabIndex = 11;
             this.label1.Text = "label1";
             // 
+            // controls
+            // 
+            this.controls.AutoSize = true;
+            this.controls.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.controls.ForeColor = System.Drawing.SystemColors.Control;
+            this.controls.Location = new System.Drawing.Point(10, 9);
+            this.controls.Name = "controls";
+            this.controls.Size = new System.Drawing.Size(293, 132);
+            this.controls.TabIndex = 12;
+            this.controls.Text = "W|up = move up\r\nS|down = move down\r\nEscape = exit\r\nR =restart\r\n";
+            // 
+            // fade
+            // 
+            this.fade.Enabled = true;
+            this.fade.Interval = 20;
+            this.fade.Tick += new System.EventHandler(this.fade_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.controls);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ball);
             this.Controls.Add(this.ai);
@@ -218,6 +238,8 @@ namespace pong_
         private System.Windows.Forms.PictureBox start;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label controls;
+        private System.Windows.Forms.Timer fade;
     }
 }
 
