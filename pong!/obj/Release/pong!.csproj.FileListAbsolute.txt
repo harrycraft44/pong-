@@ -1,0 +1,9 @@
+C:\Users\harry\source\repos\pong!\pong!\bin\Release\pong!.exe.config
+C:\Users\harry\source\repos\pong!\pong!\bin\Release\pong!.exe
+C:\Users\harry\source\repos\pong!\pong!\bin\Release\pong!.pdb
+C:\Users\harry\source\repos\pong!\pong!\obj\Release\pong_.Form1.resources
+C:\Users\harry\source\repos\pong!\pong!\obj\Release\pong_.Properties.Resources.resources
+C:\Users\harry\source\repos\pong!\pong!\obj\Release\pong!.csproj.GenerateResource.cache
+C:\Users\harry\source\repos\pong!\pong!\obj\Release\pong!.csproj.CoreCompileInputs.cache
+C:\Users\harry\source\repos\pong!\pong!\obj\Release\pong!.exe
+C:\Users\harry\source\repos\pong!\pong!\obj\Release\pong!.pdb
