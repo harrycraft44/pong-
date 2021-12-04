@@ -58,7 +58,7 @@ namespace pong_
             // P1
             // 
             this.P1.BackColor = System.Drawing.SystemColors.Control;
-            this.P1.Location = new System.Drawing.Point(13, 163);
+            this.P1.Location = new System.Drawing.Point(13, 261);
             this.P1.Name = "P1";
             this.P1.Size = new System.Drawing.Size(35, 110);
             this.P1.TabIndex = 0;
@@ -87,7 +87,7 @@ namespace pong_
             // 
             this.ai.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.ai.BackColor = System.Drawing.SystemColors.Control;
-            this.ai.Location = new System.Drawing.Point(753, 203);
+            this.ai.Location = new System.Drawing.Point(753, 261);
             this.ai.Name = "ai";
             this.ai.Size = new System.Drawing.Size(35, 110);
             this.ai.TabIndex = 3;
@@ -174,11 +174,12 @@ namespace pong_
             this.controls.BackColor = System.Drawing.Color.Transparent;
             this.controls.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.controls.ForeColor = System.Drawing.SystemColors.Control;
-            this.controls.Location = new System.Drawing.Point(10, 9);
+            this.controls.Location = new System.Drawing.Point(-3, 0);
             this.controls.Name = "controls";
-            this.controls.Size = new System.Drawing.Size(293, 132);
+            this.controls.Size = new System.Drawing.Size(293, 165);
             this.controls.TabIndex = 12;
-            this.controls.Text = "W|up = move up\r\nS|down = move down\r\nEscape = exit\r\nR =restart\r\n";
+            this.controls.Text = "W|up = move up\r\nS|down = move down\r\nEscape = exit\r\nR =restart\r\nA = ai\r\n";
+            this.controls.Click += new System.EventHandler(this.controls_Click);
             // 
             // fade
             // 

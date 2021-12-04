@@ -10,6 +10,7 @@ using System.Windows.Forms;
 //wow there no simulation in this project
 namespace pong_
 {
+
     public partial class Form1 : Form
     {
         public Form1()
@@ -24,6 +25,25 @@ namespace pong_
         public int[] scores = { 0, 0 };
         public int over = 0;
         public int randi = 0;
+        private void playsoundf() {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Reflection.Assembly.GetEntryAssembly().Location.Replace("pong!.exe","")+ "\\data\\sfx\\pong1.wav");
+            player.Play();
+
+
+        }
+        
+        private void playsoundhitwall() {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Reflection.Assembly.GetEntryAssembly().Location.Replace("pong!.exe","")+ "\\data\\sfx\\pong3.wav");
+            player.Play();
+
+
+        }
+        private void playsoundscore() {
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Reflection.Assembly.GetEntryAssembly().Location.Replace("pong!.exe","")+ "\\data\\sfx\\pong2.wav");
+            player.Play();
+
+
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             scores[0] = Properties.Settings.Default.player1;
@@ -54,6 +74,7 @@ namespace pong_
             }
             if (ball.Location.X > ai.Location.X + 20)
             {
+                playsoundscore();
                 scores[0] = scores[0] + 1;
                     messagebox = true;
                     restart();
@@ -61,7 +82,7 @@ namespace pong_
             }
             else if(ball.Location.X < P1.Location.X- 20)
             {
-
+                playsoundscore();
                 scores[1] = scores[1] + 1;
                     restart();
                 scoresupdate();
@@ -69,9 +90,9 @@ namespace pong_
             if (left)
             {
                 ball.Location = new Point(ball.Location.X + 5, ball.Location.Y + randi + over);
-                if (ai.Location.X < ball.Location.X && ai.Bounds.IntersectsWith(ball.Bounds))
+                if (ai.Bounds.IntersectsWith(ball.Bounds))
                 {
-
+                    playsoundf();
                     left = false;
                     randi = rnd.Next(-5, 5);
 
@@ -80,19 +101,21 @@ namespace pong_
             }
             else {
                 ball.Location = new Point(ball.Location.X - 5, ball.Location.Y + randi + over);
-                if (P1.Location.X < ball.Location.X && P1.Bounds.IntersectsWith(ball.Bounds))
+                if (P1.Bounds.IntersectsWith(ball.Bounds))
                 {
-
+                    playsoundf();
                     left = true;
                     randi = rnd.Next(-5, 5);
 
                 }
             }
             if (ed2.Bounds.IntersectsWith(ball.Bounds))
-            {
+            {        
+                playsoundhitwall();
                 over = 5;
                 randi = 5;
             } else if (ed.Bounds.IntersectsWith(ball.Bounds)) {
+                playsoundhitwall();
                 over = 5;
                 randi = -5;
             }
@@ -173,11 +196,13 @@ namespace pong_
                 }
 
             }
-            else if (e.KeyCode == Keys.R) { restart();
+            else if (e.KeyCode == Keys.R) { 
                 scores[1] = 0;
-                scores[0] = 0;
+                scores[0] = 0; 
+                restart();
 
-            } else if (e.KeyCode == Keys.Escape) {
+            }
+            else if (e.KeyCode == Keys.Escape) {
                 close(); 
             } else if (e.KeyCode == Keys.A) {
                 aioo = !aioo;            
@@ -245,6 +270,11 @@ namespace pong_
                 controls.Hide();
             
             }
+        }
+
+        private void controls_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
