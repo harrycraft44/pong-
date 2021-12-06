@@ -8,3 +8,4 @@ C:\Users\harry\source\repos\pong!\pong!\obj\Debug\pong!.csproj.GenerateResource.
 C:\Users\harry\source\repos\pong!\pong!\obj\Debug\pong!.csproj.CoreCompileInputs.cache
 C:\Users\harry\source\repos\pong!\pong!\obj\Debug\pong!.exe
 C:\Users\harry\source\repos\pong!\pong!\obj\Debug\pong!.pdb
+C:\Users\harry\source\repos\pong!\pong!\obj\Debug\pong_.Form2.resources

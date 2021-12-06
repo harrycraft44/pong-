@@ -15,8 +15,10 @@ namespace pong_
     {
         public Form1()
         {
-            InitializeComponent();
+            Form2 s= new Form2();
+            s.ShowDialog();
 
+            InitializeComponent();
         }
         public bool up = true;
         public bool left = false;
