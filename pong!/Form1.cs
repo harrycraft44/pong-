@@ -28,20 +28,20 @@ namespace pong_
         public int over = 0;
         public int randi = 0;
         private void playsoundf() {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Reflection.Assembly.GetEntryAssembly().Location.Replace("pong!.exe","")+ "\\data\\sfx\\pong1.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Reflection.Assembly.GetEntryAssembly().Location.Replace("blong.exe","")+ "\\sfx\\pong1.wav");
             player.Play();
 
 
         }
         
         private void playsoundhitwall() {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Reflection.Assembly.GetEntryAssembly().Location.Replace("pong!.exe","")+ "\\data\\sfx\\pong3.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Reflection.Assembly.GetEntryAssembly().Location.Replace("blong.exe", "")+ "\\sfx\\pong3.wav");
             player.Play();
 
 
         }
         private void playsoundscore() {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Reflection.Assembly.GetEntryAssembly().Location.Replace("pong!.exe","")+ "\\data\\sfx\\pong2.wav");
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Reflection.Assembly.GetEntryAssembly().Location.Replace("blong.exe", "")+ "\\sfx\\pong2.wav");
             player.Play();
 
 

@@ -37,5 +37,15 @@ namespace pong_
                 this.Close();
             }
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void P1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
