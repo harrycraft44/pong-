@@ -7,11 +7,12 @@
     <ProjectGuid>{8F79BF7A-EBB9-4CB4-813D-BF5228E7E539}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>pong_</RootNamespace>
-    <AssemblyName>pong!</AssemblyName>
+    <AssemblyName>blong</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,9 +25,10 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,6 +48,9 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>adfgdfgdfghfgjkhjljkl.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -90,6 +95,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -115,5 +121,19 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="adfgdfgdfghfgjkhjljkl.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Microsoft.Advertising.JS.10.1705.16001\build\Microsoft.Advertising.JS.targets" Condition="Exists('..\packages\Microsoft.Advertising.JS.10.1705.16001\build\Microsoft.Advertising.JS.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Advertising.JS.10.1705.16001\build\Microsoft.Advertising.JS.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Advertising.JS.10.1705.16001\build\Microsoft.Advertising.JS.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Advertising.XAML.10.1705.16001\build\Microsoft.Advertising.XAML.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Advertising.XAML.10.1705.16001\build\Microsoft.Advertising.XAML.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Services.Store.Engagement.10.1610.0\build\Microsoft.Services.Store.Engagement.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Services.Store.Engagement.10.1610.0\build\Microsoft.Services.Store.Engagement.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Advertising.XAML.10.1705.16001\build\Microsoft.Advertising.XAML.targets" Condition="Exists('..\packages\Microsoft.Advertising.XAML.10.1705.16001\build\Microsoft.Advertising.XAML.targets')" />
+  <Import Project="..\packages\Microsoft.Services.Store.Engagement.10.1610.0\build\Microsoft.Services.Store.Engagement.targets" Condition="Exists('..\packages\Microsoft.Services.Store.Engagement.10.1610.0\build\Microsoft.Services.Store.Engagement.targets')" />
 </Project>

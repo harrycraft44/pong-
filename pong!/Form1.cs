@@ -37,8 +37,6 @@ namespace pong_
         private void playsoundhitwall() {
             System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Reflection.Assembly.GetEntryAssembly().Location.Replace("blong.exe", "")+ "\\sfx\\pong3.wav");
             player.Play();
-
-
         }
         private void playsoundscore() {
             System.Media.SoundPlayer player = new System.Media.SoundPlayer(System.Reflection.Assembly.GetEntryAssembly().Location.Replace("blong.exe", "")+ "\\sfx\\pong2.wav");
