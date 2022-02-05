@@ -8,3 +8,11 @@ C:\Users\harry\source\repos\pong!\pong!\bin\Release\blong.exe
 C:\Users\harry\source\repos\pong!\pong!\bin\Release\blong.pdb
 C:\Users\harry\source\repos\pong!\pong!\obj\Release\blong.exe
 C:\Users\harry\source\repos\pong!\pong!\obj\Release\blong.pdb
+C:\Users\harry\source\repos\pong!\pong!\obj\Release\pong_.Form3.resources
+C:\Users\harry\source\repos\pong!\pong!\obj\Release\pong_.Form4.resources
+C:\Users\harry\source\repos\pong!\pong!\bin\Release\Interop.WMPLib.dll
+C:\Users\harry\source\repos\pong!\pong!\bin\Release\AxInterop.WMPLib.dll
+C:\Users\harry\source\repos\pong!\pong!\obj\Release\pong!.csproj.AssemblyReference.cache
+C:\Users\harry\source\repos\pong!\pong!\obj\Release\Interop.WMPLib.dll
+C:\Users\harry\source\repos\pong!\pong!\obj\Release\AxInterop.WMPLib.dll
+C:\Users\harry\source\repos\pong!\pong!\obj\Release\pong!.csproj.ResolveComReference.cache

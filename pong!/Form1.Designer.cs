@@ -148,7 +148,10 @@ namespace pong_
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 0);
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(801, 450);
             this.pictureBox1.TabIndex = 10;
@@ -167,6 +170,7 @@ namespace pong_
             this.label1.Size = new System.Drawing.Size(173, 61);
             this.label1.TabIndex = 11;
             this.label1.Text = "label1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // controls
             // 
@@ -176,9 +180,9 @@ namespace pong_
             this.controls.ForeColor = System.Drawing.SystemColors.Control;
             this.controls.Location = new System.Drawing.Point(-3, 0);
             this.controls.Name = "controls";
-            this.controls.Size = new System.Drawing.Size(293, 165);
+            this.controls.Size = new System.Drawing.Size(293, 198);
             this.controls.TabIndex = 12;
-            this.controls.Text = "W|up = move up\r\nS|down = move down\r\nEscape = exit\r\nR =restart\r\nA = ai\r\n";
+            this.controls.Text = "W|up = move up\r\nS|down = move down\r\nEscape = mainmenu\r\nR =restart\r\nA = ai\r\n\r\n";
             this.controls.Click += new System.EventHandler(this.controls_Click);
             // 
             // fade

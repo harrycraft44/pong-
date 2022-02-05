@@ -25,7 +25,21 @@ namespace pong_
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            switch (Properties.Settings.Default.style)
+            {
+                case 0:
+                    break;
+                case 1:
+                    panel1.BackColor = Color.White;
+                    label1.BackColor = Color.White;
+                    label1.ForeColor = Color.Black;
+                    P1.BackColor = Color.Black;
+                    ai.BackColor = Color.Black;
+                    ball.BackColor = Color.Black;
 
+                    break;
+
+            }
 
         }
 
@@ -45,6 +59,12 @@ namespace pong_
 
         private void P1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            label2.Left -= 1;
 
         }
     }

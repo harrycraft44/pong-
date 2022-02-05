@@ -15,8 +15,7 @@ namespace pong_
     {
         public Form1()
         {
-            Form2 s= new Form2();
-            s.ShowDialog();
+
 
             InitializeComponent();
         }
@@ -46,6 +45,21 @@ namespace pong_
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            switch (Properties.Settings.Default.style) {
+                case 0:
+                    break;
+                case 1:
+                    P1.BackColor = Color.Black;
+                    ai.BackColor = Color.Black;
+                    label1.BackColor = Color.White;
+                    controls.BackColor = Color.White;
+                    label1.ForeColor = Color.Black;
+
+                    ball.BackColor = Color.Black;
+                    pictureBox1.BackColor = Color.White;
+                    break;
+            
+            }
             scores[0] = Properties.Settings.Default.player1;
             scores[1] = Properties.Settings.Default.ai;
 
@@ -64,6 +78,7 @@ namespace pong_
             label1.Text = scores[0] + "|" + scores[1];
             Properties.Settings.Default.player1 = scores[0];
             Properties.Settings.Default.ai = scores[1];
+            Properties.Settings.Default.points = Properties.Settings.Default.points + ((scores[0] + scores[1]) / 2);
             Properties.Settings.Default.Save();
 
         }
@@ -203,7 +218,9 @@ namespace pong_
 
             }
             else if (e.KeyCode == Keys.Escape) {
-                close(); 
+                timer1.Stop();
+                timer2.Stop();
+                this.close(); 
             } else if (e.KeyCode == Keys.A) {
                 aioo = !aioo;            
             }
@@ -248,7 +265,7 @@ namespace pong_
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void ball_Click(object sender, EventArgs e)
@@ -273,6 +290,11 @@ namespace pong_
         }
 
         private void controls_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

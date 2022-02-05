@@ -46,5 +46,50 @@ namespace pong_.Properties {
                 this["ai"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int points {
+            get {
+                return ((int)(this["points"]));
+            }
+            set {
+                this["points"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int style {
+            get {
+                return ((int)(this["style"]));
+            }
+            set {
+                this["style"] = value;
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool store {
+            get {
+                return ((bool)(this["store"]));
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool lightmode {
+            get {
+                return ((bool)(this["lightmode"]));
+            }
+            set {
+                this["lightmode"] = value;
+            }
+        }
     }
 }

@@ -30,14 +30,21 @@ namespace pong_
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.ball = new System.Windows.Forms.PictureBox();
             this.P1 = new System.Windows.Forms.PictureBox();
             this.ai = new System.Windows.Forms.PictureBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.P1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ai)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -50,7 +57,7 @@ namespace pong_
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 51F);
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Location = new System.Drawing.Point(347, 76);
+            this.label1.Location = new System.Drawing.Point(349, 76);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(201, 78);
             this.label1.TabIndex = 0;
@@ -59,7 +66,7 @@ namespace pong_
             // ball
             // 
             this.ball.BackColor = System.Drawing.SystemColors.Control;
-            this.ball.Location = new System.Drawing.Point(528, 72);
+            this.ball.Location = new System.Drawing.Point(529, 70);
             this.ball.Name = "ball";
             this.ball.Size = new System.Drawing.Size(30, 31);
             this.ball.TabIndex = 7;
@@ -85,6 +92,39 @@ namespace pong_
             this.ai.TabIndex = 6;
             this.ai.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Location = new System.Drawing.Point(1, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(922, 296);
+            this.panel1.TabIndex = 8;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Location = new System.Drawing.Point(0, 262);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(919, 31);
+            this.panel2.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(0, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1533, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = resources.GetString("label2.Text");
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Interval = 10;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -95,6 +135,7 @@ namespace pong_
             this.Controls.Add(this.P1);
             this.Controls.Add(this.ai);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.Text = "Form2";
@@ -102,6 +143,9 @@ namespace pong_
             ((System.ComponentModel.ISupportInitialize)(this.ball)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.P1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ai)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -114,5 +158,9 @@ namespace pong_
         private System.Windows.Forms.PictureBox ball;
         private System.Windows.Forms.PictureBox P1;
         private System.Windows.Forms.PictureBox ai;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Timer timer2;
     }
 }
